@@ -1,0 +1,44 @@
+{
+  "camiones": [
+    {
+      "id": "1241",
+      "matricula": "5486-ASD",
+      "modelo": "MERCEDES",
+      "tipo": "LONA",
+      "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Tesla_Semi_3.jpg/1200px-Tesla_Semi_3.jpg"
+    },
+    {
+      "id": "2e61",
+      "matricula": "5486-ASF",
+      "modelo": "DACIA",
+      "tipo": "FRIGO",
+      "imagen": "https://www.pradesmt.com/app/uploads/camion-mercedes-arocs-2.png"
+    }
+  ],
+  "login": [
+    {
+      "id": "1",
+      "correo": "logistica@gmail.com",
+      "pswd": "usuario123",
+      "rol": "admin"
+    },
+    {
+      "id": "2",
+      "correo": "usuario123@gmail.com",
+      "pswd": "usuario123",
+      "rol": "usuario"
+    },
+    {
+      "id": "3",
+      "correo": "usuario1234@gmail.com",
+      "pswd": "usuario",
+      "rol": "usuario"
+    },
+    {
+      "id": "1733501559646",
+      "correo": "prueba@gmail.com",
+      "pswd": "usuario",
+      "rol": "admin"
+    }
+  ]
+}

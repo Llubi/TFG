@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="estilos.css">
+  <title>Login y Registro</title>
+</head>
+<body>
+  <h1>Login</h1>
+  <form id="login-form">
+    <label for="correo-login">Correo:</label>
+    <input type="email" id="correo-login" required>
+    
+    <label for="pswd-login">Contraseña:</label>
+    <input type="password" id="pswd-login" required>
+    
+    <button type="submit">Iniciar Sesión</button>
+    <div id="login-error" class="error" style="display: none; color: red;"></div>
+  </form>
+
+  <h1>Registrar Nuevo Usuario</h1>
+  <form id="register-form">
+    <label for="id-register">ID:</label>
+    <input type="number" id="id-register" required>
+    
+    <label for="correo-register">Correo:</label>
+    <input type="email" id="correo-register" required>
+    
+    <label for="pswd-register">Contraseña:</label>
+    <input type="password" id="pswd-register" required>
+    
+    <label for="rol-register">Rol:</label>
+    <select id="rol-register" required>
+      <option value="usuario">Usuario</option>
+      <option value="admin">Admin</option>
+    </select>
+
+    <button type="submit">Registrar Usuario</button>
+    <div id="register-success" style="display: none; color: green;"></div>
+    <div id="register-error" style="display: none; color: red;"></div>
+  </form>
+
+  <script src="app.js"></script>
+</body>
+</html>

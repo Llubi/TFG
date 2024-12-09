@@ -1,0 +1,158 @@
+/* inicio.css */
+
+/* Estilos generales para el fondo de inicio */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('https://cdn.pixabay.com/photo/2016/11/29/04/26/road-1868012_960_720.jpg') no-repeat center center fixed; /* Fondo relacionado con carretera */
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+  }
+  
+  #inicio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7); /* Fondo oscuro para resaltar el contenido */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    width: 90%;
+    max-width: 400px;
+    transition: all 0.3s ease;
+  }
+  
+  #inicio:hover {
+    transform: scale(1.05); /* Efecto al pasar el mouse sobre el contenedor */
+  }
+  
+  hgroup {
+    margin-bottom: 30px;
+  }
+  
+  h1 {
+    font-size: 40px;
+    color: #f39c12; /* Color inspirado en el amarillo de camiones */
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  h2 {
+    font-size: 18px;
+    color: #bdc3c7;
+    margin-bottom: 20px;
+    font-weight: normal;
+  }
+  
+  /* Estilos del formulario */
+  form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Estilo de los campos del formulario */
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: #ecf0f1;
+    color: #2c3e50;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+  }
+  
+  input[type="email"]:focus,
+  input[type="password"]:focus {
+    outline: none;
+    border-color: #e74c3c; /* Rojo para el foco, relacionado con el peligro y alerta */
+    background-color: #fff;
+  }
+  
+  input[type="email"]::placeholder,
+  input[type="password"]::placeholder {
+    color: #95a5a6;
+  }
+  
+  /* Estilo del botón de iniciar sesión */
+  button.button {
+    width: 100%;
+    padding: 15px;
+    background-color: #f39c12; /* Amarillo similar al color de camiones */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  button.button:hover {
+    background-color: #e67e22; /* Naranja para un efecto de hover */
+    transform: translateY(-2px);
+  }
+  
+  button .button-loader {
+    display: none;
+  }
+  
+  /* Enlace de registro */
+  .register-link {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+  
+  .register-link a {
+    color: #f39c12; /* Amarillo para que coincida con el tema */
+    text-decoration: none;
+    font-weight: bold;
+    transition: text-decoration 0.3s ease;
+  }
+  
+  .register-link a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Estilo de la imagen */
+  img {
+    margin-top: 40px;
+    width: 100%;
+    max-width: 350px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Efecto de fondo en la imagen */
+  img:hover {
+    transform: scale(1.1);
+    transition: transform 0.5s ease;
+  }
+  
+  /* Animación para el contenedor */
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  #inicio {
+    animation: slideIn 1s ease-out;
+  }
+  

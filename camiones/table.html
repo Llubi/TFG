@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="estilos.css">
+  <title>Camiones</title>
+</head>
+<body>
+  <h1 class="titulo1">Lista de Camiones</h1>
+  <p id="nombre-usuario"></p>
+
+  <!-- Campo de búsqueda encima de la lista de camiones -->
+  <input type="text" id="busqueda" placeholder="Buscar camión por matrícula, modelo o tipo" />
+
+  <div id="tarjetas-container" class="tarjetas-container"></div>
+
+  <h1>Agregar Camión</h1>
+  <form id="camion-form">
+    <label for="matricula">Matrícula:</label>
+    <input type="text" id="matricula" required>
+    
+    <label for="modelo">Modelo:</label>
+    <input type="text" id="modelo" required>
+    
+    <label for="tipo">Tipo:</label>
+    <select id="tipo" required>
+      <option value="LONA">Lona</option>
+      <option value="FRIGO">Frigorífico</option>
+      <option value="CAJA">Caja</option>
+    </select>
+    
+    <label for="imagen">URL de Imagen:</label>
+    <input type="url" id="imagen" required>
+    
+    <button type="submit">Agregar Camión</button>
+  </form>
+
+  <button id="logout-btn">Cerrar Sesión</button>
+  
+  <script src="app.js"></script>
+</body>
+</html>
