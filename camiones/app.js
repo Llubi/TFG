@@ -1,14 +1,12 @@
-// URLs para interactuar con el backend
-const USER_API_URL = 'http://localhost:3001/login'; // Endpoint para login y registro
-const API_URL = 'http://localhost:3001/camiones';  // Endpoint para gestionar camiones
+const USER_API_URL = 'http://localhost:3001/login';
+const API_URL = 'http://localhost:3001/camiones';
 
-// Evento que se ejecuta cuando el DOM está completamente cargado
 document.addEventListener('DOMContentLoaded', () => {
-  const currentPage = window.location.pathname; // Obtiene la ruta actual de la página
+  const currentPage = window.location.pathname;
 
-  // Si estamos en la página de login/registro
   if (currentPage.endsWith('index.html')) {
-    manejarLoginYRegistro(); // Llama a la función para gestionar login y registro
+    // Llama a la función para gestionar login y registro
+    manejarLoginYRegistro(); 
   }
 
   // Si estamos en la página de tabla de camiones
@@ -19,15 +17,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Función para manejar el login y registro
 function manejarLoginYRegistro() {
-  const loginForm = document.getElementById('login-form');       // Formulario de login
-  const registerForm = document.getElementById('register-form'); // Formulario de registro
+  const loginForm = document.getElementById('login-form');       // login
+  const registerForm = document.getElementById('register-form'); // registro
 
   // Manejo del evento de envío del formulario de login
   loginForm.addEventListener('submit', async (e) => {
     e.preventDefault(); // Previene el envío por defecto del formulario
 
-    const correo = document.getElementById('correo-login').value.trim(); // Obtiene y limpia el correo
-    const pswd = document.getElementById('pswd-login').value.trim();     // Obtiene y limpia la contraseña
+    const correo = document.getElementById('correo-login').value.trim();
+    const pswd = document.getElementById('pswd-login').value.trim();
 
     try {
       const response = await fetch(USER_API_URL); // Hace una solicitud GET al endpoint de login
@@ -49,7 +47,7 @@ function manejarLoginYRegistro() {
       }
     } catch (error) {
       console.error('Error al iniciar sesión:', error); // Log del error
-      mostrarError('login-error', 'Ocurrió un error al iniciar sesión.'); // Muestra error genérico
+      mostrarError('login-error', 'Ocurrió un error al iniciar sesión.');
     }
   });
 
@@ -58,9 +56,9 @@ function manejarLoginYRegistro() {
     e.preventDefault(); // Previene el envío por defecto del formulario
 
     const nuevoUsuario = {
-      id: Date.now().toString(), // Genera un ID único basado en el timestamp actual
-      correo: document.getElementById('correo-register').value.trim(), // Obtiene y limpia el correo
-      pswd: document.getElementById('pswd-register').value.trim(),     // Obtiene y limpia la contraseña
+      id: Date.now().toString(), // Genera un ID único
+      correo: document.getElementById('correo-register').value.trim(),
+      pswd: document.getElementById('pswd-register').value.trim(),
       rol: 'usuario', // Asigna un rol por defecto
     };
 
@@ -85,11 +83,11 @@ function manejarLoginYRegistro() {
 
 // Función para manejar camiones
 function manejarCamiones() {
-  const nombreUsuario = document.getElementById('nombre-usuario'); // Elemento para mostrar el nombre del usuario
-  const tarjetasContainer = document.getElementById('tarjetas-container'); // Contenedor de las tarjetas de camiones
-  const camionForm = document.getElementById('camion-form'); // Formulario para agregar camiones
-  const logoutBtn = document.getElementById('logout-btn'); // Botón de logout
-  const busquedaInput = document.getElementById('busqueda'); // Campo de búsqueda
+  const nombreUsuario = document.getElementById('nombre-usuario');
+  const tarjetasContainer = document.getElementById('tarjetas-container');
+  const camionForm = document.getElementById('camion-form');
+  const logoutBtn = document.getElementById('logout-btn');
+  const busquedaInput = document.getElementById('busqueda');
 
   // Obtiene el nombre y rol del usuario del localStorage
   const usuarioNombre = localStorage.getItem('usuarioNombre');
@@ -108,11 +106,11 @@ function manejarCamiones() {
     camionForm.style.display = 'none';
   }
 
-  obtenerCamiones(); // Carga los camiones al iniciar
+  obtenerCamiones();
 
   // Manejo del formulario de agregar camión
   camionForm.addEventListener('submit', async (e) => {
-    e.preventDefault(); // Previene el envío por defecto
+    e.preventDefault();
 
     const nuevoCamion = {
       matricula: document.getElementById('matricula').value.trim(),
@@ -125,16 +123,16 @@ function manejarCamiones() {
       const response = await fetch(API_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(nuevoCamion), // Envía el nuevo camión como JSON
+        body: JSON.stringify(nuevoCamion),
       });
 
       if (!response.ok) throw new Error('Error al agregar camión.');
 
-      camionForm.reset(); // Limpia el formulario
-      obtenerCamiones(); // Recarga los camiones
+      camionForm.reset();
+      obtenerCamiones();
     } catch (error) {
-      console.error('Error al agregar camión:', error); // Log del error
-      alert('No se pudo agregar el camión.'); // Muestra mensaje de error
+      console.error('Error al agregar camión:', error);
+      alert('No se pudo agregar el camión.');
     }
   });
 

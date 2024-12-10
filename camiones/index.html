@@ -1,45 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8"> <!-- Define la codificación de caracteres para la página como UTF-8 -->
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Asegura que la página sea responsive -->
-  <link rel="stylesheet" href="index.css"> <!-- Enlace al archivo de estilos CSS externo -->
-  <title>Login y Registro</title> <!-- Título de la página que aparece en la pestaña del navegador -->
+  <link rel="stylesheet" href="index.css"> 
+  <title>Login y Registro</title> 
 </head>
 <body>
   <!-- Sección de Login -->
-  <h1>Login</h1> <!-- Encabezado para la sección de login -->
+  <h1>Login</h1> 
   <form id="login-form"> <!-- Formulario para iniciar sesión -->
-    <label for="correo-login">Correo:</label> <!-- Etiqueta para el campo de correo -->
-    <input type="email" id="correo-login" required> <!-- Campo de entrada para el correo electrónico (requerido) -->
+    <label for="correo-login">Correo:</label> 
+    <input type="email" id="correo-login" required> 
     
-    <label for="pswd-login">Contraseña:</label> <!-- Etiqueta para el campo de contraseña -->
-    <input type="password" id="pswd-login" required> <!-- Campo de entrada para la contraseña (requerido) -->
+    <label for="pswd-login">Contraseña:</label> 
+    <input type="password" id="pswd-login" required> 
     
-    <button type="submit">Iniciar Sesión</button> <!-- Botón para enviar el formulario -->
-    <div id="login-error" class="error" style="display: none; color: red;"></div> <!-- Mensaje de error oculto que se muestra en caso de error de login -->
+    <button type="submit">Iniciar Sesión</button>  
+    <div id="login-error" class="error" style="display: none; color: red;"></div> 
   </form>
 
   <!-- Sección de Registro -->
-  <h1>Registrar Nuevo Usuario</h1> <!-- Encabezado para la sección de registro -->
-  <form id="register-form"> <!-- Formulario para registrar un nuevo usuario -->
-    <label for="correo-register">Correo:</label> <!-- Etiqueta para el campo de correo en registro -->
-    <input type="email" id="correo-register" required> <!-- Campo de entrada para el correo electrónico (requerido) -->
+  <h1>Registrar Nuevo Usuario</h1> 
+  <form id="register-form"> 
+    <label for="correo-register">Correo:</label>  
+    <input type="email" id="correo-register" required>  
     
-    <label for="pswd-register">Contraseña:</label> <!-- Etiqueta para el campo de contraseña en registro -->
-    <input type="password" id="pswd-register" required> <!-- Campo de entrada para la contraseña (requerido) -->
+    <label for="pswd-register">Contraseña:</label>  
+    <input type="password" id="pswd-register" required>  
     
-    <label for="rol-register">Rol:</label> <!-- Etiqueta para el campo de selección de rol -->
-    <select id="rol-register" required> <!-- Menú desplegable para seleccionar el rol del usuario -->
-      <option value="usuario">Usuario</option> <!-- Opción de rol "Usuario" -->
-      <option value="admin">Admin</option> <!-- Opción de rol "Admin" -->
+    <label for="rol-register">Rol:</label>  
+    <select id="rol-register" required>  
+      <option value="usuario">Usuario</option>  
+      <option value="admin">Admin</option>  
     </select>
 
-    <button type="submit">Registrar Usuario</button> <!-- Botón para enviar el formulario de registro -->
-    <div id="register-success" style="display: none; color: green;"></div> <!-- Mensaje de éxito oculto que se muestra al registrar un usuario con éxito -->
-    <div id="register-error" style="display: none; color: red;"></div> <!-- Mensaje de error oculto que se muestra en caso de error de registro -->
+    <button type="submit">Registrar Usuario</button>  
+    <div id="register-success" style="display: none; color: green;"></div>  
+    <div id="register-error" style="display: none; color: red;"></div> 
   </form>
 
-  <script src="app.js"></script> <!-- Archivo JavaScript externo que controla las interacciones de los formularios -->
+  <script src="app.js"></script> 
 </body>
 </html>

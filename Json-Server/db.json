@@ -41,12 +41,6 @@
       "correo": "usuario123@gmail.com",
       "pswd": "usuario",
       "rol": "usuario"
-    },
-    {
-      "id": "1733789051943",
-      "correo": "usuario1234@gmail.com",
-      "pswd": "usuario",
-      "rol": "usuario"
     }
   ]
 }
