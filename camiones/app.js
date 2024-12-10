@@ -5,38 +5,38 @@ document.addEventListener('DOMContentLoaded', () => {
   const currentPage = window.location.pathname;
 
   if (currentPage.endsWith('index.html')) {
-    // Llama a la función para gestionar login y registro
+    // gestiona login y registro
     manejarLoginYRegistro(); 
   }
 
   // Si estamos en la página de tabla de camiones
   if (currentPage.endsWith('table.html')) {
-    manejarCamiones(); // Llama a la función para gestionar los camiones
+    manejarCamiones();
   }
 });
 
-// Función para manejar el login y registro
+// login y registro
 function manejarLoginYRegistro() {
-  const loginForm = document.getElementById('login-form');       // login
-  const registerForm = document.getElementById('register-form'); // registro
+  const loginForm = document.getElementById('login-form');
+  const registerForm = document.getElementById('register-form');
 
   // Manejo del evento de envío del formulario de login
   loginForm.addEventListener('submit', async (e) => {
-    e.preventDefault(); // Previene el envío por defecto del formulario
+    e.preventDefault();
 
     const correo = document.getElementById('correo-login').value.trim();
     const pswd = document.getElementById('pswd-login').value.trim();
 
     try {
       const response = await fetch(USER_API_URL); // Hace una solicitud GET al endpoint de login
-      if (!response.ok) throw new Error('Error al obtener usuarios.'); // Maneja errores en la respuesta
+      if (!response.ok) throw new Error('Error al obtener usuarios.');
 
-      const usuarios = await response.json(); // Convierte la respuesta a JSON
-      // Busca un usuario que coincida con las credenciales proporcionadas
+      const usuarios = await response.json();
+      // Busca un usuario que coincida con las credenciales proporcionadas dentro de nuestra base de datos
       const usuario = usuarios.find((u) => u.correo === correo && u.pswd === pswd);
 
       if (usuario) {
-        // Guarda los datos del usuario en el localStorage
+        // Guarda los datos del usuario
         localStorage.setItem('authToken', JSON.stringify({ correo, id: usuario.id, rol: usuario.rol }));
         localStorage.setItem('usuarioNombre', usuario.correo);
 
@@ -67,21 +67,21 @@ function manejarLoginYRegistro() {
       const response = await fetch(USER_API_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(nuevoUsuario), // Envia el nuevo usuario como JSON
+        body: JSON.stringify(nuevoUsuario),
       });
 
-      if (!response.ok) throw new Error('Error al registrar usuario.'); // Maneja errores en la respuesta
+      if (!response.ok) throw new Error('Error al registrar usuario.');
 
-      mostrarMensaje('register-success', 'Usuario registrado exitosamente.'); // Mensaje de éxito
-      registerForm.reset(); // Limpia el formulario
+      mostrarMensaje('register-success', 'Usuario registrado exitosamente.');
+      registerForm.reset();
     } catch (error) {
-      console.error('Error al registrar usuario:', error); // Log del error
-      mostrarError('register-error', 'No se pudo registrar el usuario.'); // Muestra error genérico
+      console.error('Error al registrar usuario:', error);
+      mostrarError('register-error', 'No se pudo registrar el usuario.');
     }
   });
 }
 
-// Función para manejar camiones
+// CAMIONES
 function manejarCamiones() {
   const nombreUsuario = document.getElementById('nombre-usuario');
   const tarjetasContainer = document.getElementById('tarjetas-container');
@@ -89,12 +89,11 @@ function manejarCamiones() {
   const logoutBtn = document.getElementById('logout-btn');
   const busquedaInput = document.getElementById('busqueda');
 
-  // Obtiene el nombre y rol del usuario del localStorage
+  // Obtiene el nombre y rol del usuario
   const usuarioNombre = localStorage.getItem('usuarioNombre');
   const usuarioRol = JSON.parse(localStorage.getItem('authToken'))?.rol;
 
   if (!usuarioNombre) {
-    // Si no hay usuario autenticado, redirige al login
     alert('Debes iniciar sesión.');
     window.location.href = 'index.html';
   }
@@ -108,7 +107,7 @@ function manejarCamiones() {
 
   obtenerCamiones();
 
-  // Manejo del formulario de agregar camión
+  // Agregar camión
   camionForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
@@ -136,22 +135,22 @@ function manejarCamiones() {
     }
   });
 
-  // Manejo del botón de logout
+  // botón de logout
   logoutBtn.addEventListener('click', () => {
-    localStorage.clear(); // Limpia el localStorage
-    window.location.href = 'index.html'; // Redirige al login
+    localStorage.clear();
+    window.location.href = 'index.html';
   });
 
-  // Función para obtener los camiones
+  // Mostrar los camiones que tenemos
   async function obtenerCamiones() {
     try {
-      const response = await fetch(API_URL); // Hace una solicitud GET al endpoint de camiones
+      const response = await fetch(API_URL);
       if (!response.ok) throw new Error('Error al obtener camiones.');
 
-      const camiones = await response.json(); // Convierte la respuesta a JSON
-      mostrarCamiones(camiones); // Muestra los camiones en la interfaz
+      const camiones = await response.json(); 
+      mostrarCamiones(camiones);
 
-      // Filtra los camiones en base al término de búsqueda
+      // Filtrado en base de como lo buscamos
       busquedaInput.addEventListener('input', (e) => {
         const terminoBusqueda = e.target.value.toLowerCase();
         const camionesFiltrados = camiones.filter((camion) =>
@@ -159,19 +158,19 @@ function manejarCamiones() {
           camion.modelo.toLowerCase().includes(terminoBusqueda) ||
           camion.tipo.toLowerCase().includes(terminoBusqueda)
         );
-        mostrarCamiones(camionesFiltrados); // Muestra los camiones filtrados
+        mostrarCamiones(camionesFiltrados); // Muestra los camiones que tenga lo que hayamos buscado
       });
     } catch (error) {
-      console.error('Error al obtener camiones:', error); // Log del error
+      console.error('Error al obtener camiones:', error); 
     }
   }
 
-  // Función para mostrar los camiones en la interfaz
+  // Función para mostrar camiones
   function mostrarCamiones(camiones) {
-    tarjetasContainer.innerHTML = ''; // Limpia el contenedor
+    tarjetasContainer.innerHTML = '';
 
     camiones.forEach((camion) => {
-      const tarjeta = document.createElement('div'); // Crea una tarjeta para cada camión
+      const tarjeta = document.createElement('div');
       tarjeta.classList.add('tarjeta');
       tarjeta.innerHTML = `
         <img src="${camion.imagen}" alt="${camion.modelo}">
@@ -181,7 +180,7 @@ function manejarCamiones() {
         ${usuarioRol === 'admin' ? `<button class="eliminar-btn" data-id="${camion.id}">Eliminar</button>` : ''}
       `;
 
-      tarjetasContainer.appendChild(tarjeta); // Agrega la tarjeta al contenedor
+      tarjetasContainer.appendChild(tarjeta); // Agrega la tarjeta en nuestro contenedor
     });
 
     // Si el usuario es admin, permite eliminar camiones
@@ -189,19 +188,19 @@ function manejarCamiones() {
       const botonesEliminar = document.querySelectorAll('.eliminar-btn');
       botonesEliminar.forEach((btn) => {
         btn.addEventListener('click', async (e) => {
-          const camionId = e.target.getAttribute('data-id'); // Obtiene el ID del camión a eliminar
+          const camionId = e.target.getAttribute('data-id');
 
           try {
             const response = await fetch(`${API_URL}/${camionId}`, {
-              method: 'DELETE', // Realiza una solicitud DELETE al endpoint correspondiente
+              method: 'DELETE', // Borra los camiones
             });
 
             if (!response.ok) throw new Error('Error al eliminar el camión.');
 
-            obtenerCamiones(); // Recarga los camiones después de eliminar
+            obtenerCamiones();
           } catch (error) {
-            console.error('Error al eliminar camión:', error); // Log del error
-            alert('No se pudo eliminar el camión.'); // Muestra mensaje de error
+            console.error('Error al eliminar camión:', error);
+            alert('No se pudo eliminar el camión.');
           }
         });
       });
@@ -209,16 +208,16 @@ function manejarCamiones() {
   }
 }
 
-// Función para mostrar errores en la interfaz
+// errores en la interfaz
 function mostrarError(id, mensaje) {
-  const errorDiv = document.getElementById(id); // Elemento donde se muestra el error
-  errorDiv.textContent = mensaje; // Establece el mensaje de error
-  errorDiv.style.display = 'block'; // Muestra el error
+  const errorDiv = document.getElementById(id);
+  errorDiv.textContent = mensaje;
+  errorDiv.style.display = 'block';
 }
 
-// Función para mostrar mensajes de éxito en la interfaz
+// mensajes de exitosoo en la interfaz
 function mostrarMensaje(id, mensaje) {
-  const successDiv = document.getElementById(id); // Elemento donde se muestra el mensaje
-  successDiv.textContent = mensaje; // Establece el mensaje de éxito
-  successDiv.style.display = 'block'; // Muestra el mensaje
+  const successDiv = document.getElementById(id);
+  successDiv.textContent = mensaje;
+  successDiv.style.display = 'block';
 }
