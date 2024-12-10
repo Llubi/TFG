@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8"> <!-- Define la codificación de caracteres como UTF-8, lo cual es importante para el soporte de caracteres especiales como acentos -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Establece que la página sea responsiva para dispositivos móviles -->
+  
   <!-- Enlace a la fuente de Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./inicio.css">
-
-  <title>Bienvenido</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> <!-- Carga la fuente "Press Start 2P" desde Google Fonts -->
+  
+  <link rel="stylesheet" href="./inicio.css"> <!-- Enlace al archivo CSS específico para este archivo HTML -->
+  
+  <title>Bienvenido</title> <!-- Título que aparecerá en la pestaña del navegador -->
 </head>
 <body>
+
+  <!-- Contenedor principal de bienvenida -->
   <div class="bienvenida-container">
-    <h1>Bienvenido a la Gestión de Camiones</h1>
-    <button id="iniciar-btn">Iniciar</button>
+    <h1><span class="importcargo">Importcargo</span></h1> <!-- Nombre de la empresa con una clase especial "importcargo" para darle estilo único -->
+    <h1>Bienvenido a nuestra gestión de flotas.</h1> <!-- Mensaje de bienvenida para el usuario -->
+    <button id="iniciar-btn">Iniciar</button> <!-- Botón que permitirá al usuario comenzar la navegación -->
   </div>
 
   <script>
+    // Escucha el evento de clic sobre el botón "iniciar-btn" y redirige al usuario a la página de login (index.html)
     document.getElementById('iniciar-btn').addEventListener('click', () => {
-      window.location.href = 'index.html'; // Cambiar a la página de login
+      window.location.href = 'index.html'; // Redirecciona a la página de login
     });
   </script>
+
 </body>
 </html>

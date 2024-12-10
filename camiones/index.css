@@ -1,0 +1,155 @@
+/* Variables de color para un tema industrial */
+:root {
+    --primary-color: #2C3E50; /* Gris oscuro metálico */
+    --secondary-color: #E67E22; /* Naranja, como los colores de camiones de construcción */
+    --button-hover-color: #D35400; /* Naranja más oscuro al hacer hover */
+    --background-color: #BDC3C7; /* Gris claro metálico */
+    --text-color: #ECF0F1; /* Texto claro */
+    --form-background: rgba(44, 62, 80, 0.9); /* Fondo oscuro semi-transparente */
+    --input-focus-color: #E67E22; /* Color de borde en input, similar a señalización */
+    --border-color: #34495E; /* Gris oscuro para bordes */
+    --shadow-color: rgba(0, 0, 0, 0.2); /* Sombra suave */
+  }
+  
+  /* Estilos generales */
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    background-image: url('https://example.com/your-truck-background-image.jpg'); /* Imagen de fondo de camión (puedes poner una URL real de una imagen) */
+    background-size: cover;
+    background-position: center;
+  }
+  
+  /* Títulos */
+  h1 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin-top: 0; /* Sin margen superior */
+    margin-bottom: 20px; /* Espacio entre el título y el formulario */
+  }
+  
+  /* Formularios */
+  form {
+    background-color: var(--form-background);
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    margin: 20px 0;
+    border: 3px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Estilo de etiquetas */
+  form label {
+    font-size: 1rem;
+    color: var(--text-color);
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    width: 100%;
+    text-align: left;
+  }
+  
+  /* Estilo de campos de entrada y selección */
+  form input,
+  form select {
+    width: 100%; /* Aseguramos que los campos tengan el mismo tamaño */
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #fff;
+    box-shadow: 0 2px 6px var(--shadow-color);
+  }
+  
+  /* Estilo al hacer foco en los campos */
+  form input:focus,
+  form select:focus {
+    outline: none;
+    border: 2px solid var(--input-focus-color);
+    box-shadow: 0 0 8px var(--input-focus-color);
+  }
+  
+  /* Estilo de los botones */
+  form button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: var(--secondary-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  
+  /* Efecto de hover en los botones */
+  form button:hover {
+    background-color: var(--button-hover-color);
+  }
+  
+  /* Mensajes de error y éxito */
+  .error {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: red;
+  }
+  
+  .success {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: green;
+  }
+  
+  /* Estilo del formulario de registro */
+  #register-form {
+    margin-top: 40px;
+  }
+  
+  /* Espaciado entre los formularios de login y registro */
+  h1 + form {
+    margin-top: 40px;
+  }
+  
+  /* Diseño para el mensaje de éxito o error en el registro */
+  #register-success,
+  #register-error {
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+  
+  #login-error,
+  #register-success,
+  #register-error {
+    display: none;
+  }
+  
+  /* Aseguramos que los formularios estén bien alineados uno encima del otro */
+  #login-form {
+    margin-top: 0; /* Aseguramos que el formulario de login no tenga margen superior */
+  }
+  
+  #register-form {
+    margin-top: 40px; /* Margen entre el formulario de login y el de registro */
+  }
+  

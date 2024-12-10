@@ -9,12 +9,13 @@
 
 /* Colores generales */
 :root {
-  --primary-color: #1e3d59;
-  --secondary-color: #f5a623;
-  --background-color: #0c1b2a;
-  --card-bg-color: rgba(255, 255, 255, 0.85);
+  --primary-color: #2c3e50;  /* Azul oscuro metálico */
+  --secondary-color: #e74c3c; /* Rojo brillante */
+  --background-color: #34495e; /* Gris metálico */
+  --card-bg-color: rgba(255, 255, 255, 0.9);
   --text-color: #ffffff;
-  --button-hover-color: #d4841b;
+  --highlight-color: #f39c12; /* Amarillo metálico */
+  --button-hover-color: #e67e22;
 }
 
 /* Fondo y estructura general */
@@ -34,33 +35,46 @@ body {
 }
 
 /* Encabezados */
-h1 {
-  font-size: 2.5rem;
-  color: var(--secondary-color);
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+header {
   text-align: center;
+  margin-bottom: 40px;
+}
+
+h1 {
+  font-size: 3.2rem;  /* Aumentar tamaño */
+  font-weight: bold;  /* Hacer negrita */
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);  /* Sombra más fuerte */
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 h2 {
-  font-size: 1.5rem;
-  color: var(--text-color);
-  margin-bottom: 10px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--highlight-color);  /* Amarillo metálico */
+  margin-bottom: 20px;
   text-align: center;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);  /* Sombra sutil */
 }
 
 /* Campo de búsqueda */
 #busqueda {
   width: 100%;
-  max-width: 600px;
-  padding: 10px 15px;
+  max-width: 500px;
+  padding: 12px 20px;
   margin: 20px auto;
-  border-radius: 5px;
-  border: none;
-  font-size: 1rem;
-  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  border: 1px solid var(--highlight-color);  /* Añadir borde amarillo */
+  font-size: 1.2rem;
+  background-color: rgba(255, 255, 255, 0.8);
   color: #333;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 #busqueda:focus {
@@ -77,20 +91,23 @@ h2 {
   margin-top: 20px;
 }
 
+
+
 /* Tarjeta */
 .tarjeta {
   background-color: var(--card-bg-color);
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   overflow: hidden;
-  max-width: 200px;
+  max-width: 220px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 40px;
 }
 
 .tarjeta:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
 }
 
 .tarjeta img {
@@ -101,83 +118,102 @@ h2 {
 }
 
 .tarjeta h3 {
-  font-size: 1.2rem;
+  font-size: 1.5rem;  /* Aumentar tamaño */
+  font-weight: bold;  /* Hacer negrita */
   color: var(--primary-color);
   margin: 10px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);  /* Sombra sutil para destacar */
 }
 
 .tarjeta p {
-  font-size: 1rem;
+  font-size: 1.1rem;
   margin: 10px;
   color: #333;
+  font-weight: 500;  /* Resaltar más el texto */
 }
 
 /* Formulario */
-form {
-  background-color: rgba(0, 0, 0, 0.7);
+#camion-form {
+  background-color: rgba(146, 32, 32, 0.8);
   padding: 20px;
   border-radius: 10px;
-  max-width: 500px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   width: 100%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-  margin-top: 20px;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
-form label {
-  color: var(--text-color);
-  font-size: 1rem;
+#camion-form label {
+  font-weight: bold;
+  margin-top: 10px;
   display: block;
-  margin: 10px 0 5px;
 }
 
-form input,
-form select {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  color: #333;
-  background-color: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-}
-
-form input:focus,
-form select:focus {
-  outline: none;
-  border: 2px solid var(--secondary-color);
-}
-
-form button {
+#camion-form input, 
+#camion-form select {
   width: 100%;
   padding: 12px;
-  font-size: 1.2rem;
-  color: var(--text-color);
+  margin: 8px 0;
+  border-radius: 5px;
+  border: 1px solid var(--primary-color);
+}
+
+#camion-form button {
   background-color: var(--secondary-color);
+  color: #fff;
+  padding: 12px 20px;
+  font-size: 1.2rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  margin-top: 15px;
 }
 
-form button:hover {
+#camion-form button:hover {
   background-color: var(--button-hover-color);
 }
 
-/* Botón de cerrar sesión */
-#logout-btn {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 1rem;
-  color: var(--text-color);
-  background-color: var(--secondary-color);
+/* Botón de eliminar camión */
+.eliminar-btn {
+  background-color: #e74c3c;  /* Rojo brillante */
+  color: white;
+  padding: 12px 25px;
+  font-size: 1.2rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  margin-top: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Efecto hover */
+.eliminar-btn:hover {
+  background-color: #c0392b;  /* Rojo más oscuro */
+  transform: scale(1.05);  /* Agrandar ligeramente al pasar el ratón */
+}
+
+/* Efecto de foco */
+.eliminar-btn:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(231, 76, 60, 0.8);  /* Resalta con un brillo rojo */
+}
+
+/* Footer */
+footer {
+  margin-top: 40px;
+}
+
+#logout-btn {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 #logout-btn:hover {
-  background-color: var(--button-hover-color);
+  background-color: var(--secondary-color);
 }

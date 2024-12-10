@@ -1,43 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="estilos.css">
-  <title>Camiones</title>
+  <meta charset="UTF-8"> <!-- Define la codificación de caracteres como UTF-8 para garantizar el soporte de caracteres especiales -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Permite que la página sea responsiva en dispositivos móviles -->
+  <link rel="stylesheet" href="estilos.css"> <!-- Enlace al archivo CSS para aplicar los estilos a la página -->
+  <title>Camiones</title> <!-- Título que aparece en la pestaña del navegador -->
 </head>
 <body>
-  <h1 class="titulo1">Lista de Camiones</h1>
-  <p id="nombre-usuario"></p>
+  <header>
+    <h1 class="titulo1">Nuestros Camiones</h1> <!-- Título principal de la página que muestra el nombre de la sección -->
+    <p id="nombre-usuario">Bienvenido, usuario</p> <!-- Mensaje de bienvenida al usuario, dinámicamente se puede actualizar con el nombre del usuario -->
+  </header>
 
-  <!-- Campo de búsqueda encima de la lista de camiones -->
-  <input type="text" id="busqueda" placeholder="Buscar camión por matrícula, modelo o tipo" />
+  <!-- Campo de búsqueda para permitir la filtración de camiones -->
+  <input type="text" id="busqueda" placeholder="Buscar camión por matrícula, modelo o tipo" /> <!-- Campo donde el usuario puede buscar camiones por criterios específicos -->
 
-  <div id="tarjetas-container" class="tarjetas-container"></div>
+  <div id="tarjetas-container" class="tarjetas-container"></div> <!-- Contenedor donde se mostrarán las tarjetas de los camiones -->
 
-  <h1>Agregar Camión</h1>
-  <form id="camion-form">
-    <label for="matricula">Matrícula:</label>
-    <input type="text" id="matricula" required>
+  <section id="agregar-camion">
+    <h2>Agregar un Camión</h2> <!-- Título de la sección que permite agregar nuevos camiones -->
+    <form id="camion-form"> <!-- Formulario para agregar un nuevo camión -->
+      <label for="matricula">Matrícula:</label> <!-- Etiqueta para el campo de matrícula -->
+      <input type="text" id="matricula" required> <!-- Campo para ingresar la matrícula del camión -->
     
-    <label for="modelo">Modelo:</label>
-    <input type="text" id="modelo" required>
+      <label for="modelo">Modelo:</label> <!-- Etiqueta para el campo de modelo -->
+      <input type="text" id="modelo" required> <!-- Campo para ingresar el modelo del camión -->
     
-    <label for="tipo">Tipo:</label>
-    <select id="tipo" required>
-      <option value="LONA">Lona</option>
-      <option value="FRIGO">Frigorífico</option>
-      <option value="CAJA">Caja</option>
-    </select>
+      <label for="tipo">Tipo:</label> <!-- Etiqueta para el campo de tipo -->
+      <select id="tipo" required> <!-- Desplegable para elegir el tipo de camión -->
+        <option value="LONA">Lona</option> <!-- Opción de tipo Lona -->
+        <option value="FRIGO">Frigorífico</option> <!-- Opción de tipo Frigorífico -->
+        <option value="CAJA">Caja</option> <!-- Opción de tipo Caja -->
+      </select>
     
-    <label for="imagen">URL de Imagen:</label>
-    <input type="url" id="imagen" required>
+      <label for="imagen">URL de Imagen:</label> <!-- Etiqueta para el campo de URL de imagen -->
+      <input type="url" id="imagen" required> <!-- Campo para ingresar la URL de la imagen del camión -->
     
-    <button type="submit">Agregar Camión</button>
-  </form>
+      <button type="submit">Agregar Camión</button> <!-- Botón para enviar el formulario y agregar el nuevo camión -->
+    </form>
+  </section>
 
-  <button id="logout-btn">Cerrar Sesión</button>
-  
-  <script src="app.js"></script>
+  <footer>
+    <button id="logout-btn">Cerrar Sesión</button> <!-- Botón para cerrar sesión y redirigir al usuario a la página de inicio o login -->
+  </footer>
+
+  <script src="app.js"></script> <!-- Enlace al archivo de JavaScript que contiene la funcionalidad de la página -->
 </body>
 </html>
