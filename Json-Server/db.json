@@ -1,18 +1,32 @@
 {
   "camiones": [
     {
-      "id": "1241",
+      "id": "23ff",
       "matricula": "5486-ASD",
       "modelo": "MERCEDES",
       "tipo": "LONA",
-      "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Tesla_Semi_3.jpg/1200px-Tesla_Semi_3.jpg"
+      "imagen": "https://www.autonomosenruta.com/images/stories/imagenes_2020/imagenes_mayo20/mercedes-oferta.jpg"
     },
     {
-      "id": "2e61",
+      "id": "7360",
       "matricula": "5486-ASF",
-      "modelo": "DACIA",
+      "modelo": "VOLVO",
       "tipo": "FRIGO",
-      "imagen": "https://www.pradesmt.com/app/uploads/camion-mercedes-arocs-2.png"
+      "imagen": "https://www.transporteprofesional.es/media/k2/items/cache/e2affaa0f83d9c44300f73b8385e1610_XL.jpg"
+    },
+    {
+      "id": "a0f9",
+      "matricula": "5888-ASF",
+      "modelo": "RENAULT",
+      "tipo": "CAJA",
+      "imagen": "https://motortarrega.com/wp-content/uploads/2022/03/Renault-Trucks-T-E-Tech-scaled.jpg"
+    },
+    {
+      "id": "546a",
+      "matricula": "5499-AHG",
+      "modelo": "TESLA",
+      "tipo": "FRIGO",
+      "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Tesla_Semi_3.jpg/1200px-Tesla_Semi_3.jpg"
     }
   ],
   "login": [
@@ -23,22 +37,16 @@
       "rol": "admin"
     },
     {
-      "id": "2",
+      "id": "1733788987462",
       "correo": "usuario123@gmail.com",
-      "pswd": "usuario123",
+      "pswd": "usuario",
       "rol": "usuario"
     },
     {
-      "id": "3",
+      "id": "1733789051943",
       "correo": "usuario1234@gmail.com",
       "pswd": "usuario",
       "rol": "usuario"
-    },
-    {
-      "id": "1733501559646",
-      "correo": "prueba@gmail.com",
-      "pswd": "usuario",
-      "rol": "admin"
     }
   ]
 }
